@@ -42,7 +42,7 @@ def main():
     query = "What have I worked on at Ford Credit Organization so far? Do not conflate this with my work at Ford Motor Company."
     docs = docsearch.similarity_search(query)
 
-    # Use the stuff chain to answer the question with sources
+    # Use the map_reduce chain to answer the question with sources
     chain = load_qa_with_sources_chain(
         OpenAI(temperature=0), chain_type="map_reduce", return_map_steps=True
     )
