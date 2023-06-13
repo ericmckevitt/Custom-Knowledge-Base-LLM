@@ -19,7 +19,7 @@ In this project, I use the LangChain library along with the OpenAI gpt-3.5-turbo
 
 ## Example Execution: 
 
-In this example, I ask the LLM to find out what I have worked on at Ford Credit Organization thus far in my internship. Answers to this question will be scattered around different documents. This is a nuanced example, in that the model will have to differentiate between work done for Ford Credit Organization and Ford Motor Company. 
+In this example, I ask the LLM to find out what I have worked on at Ford Credit Organization thus far in my internship. The corpus of documents provided is the collection of all my markdown notes from the Obsidian note-taking app. Answers to this question will be scattered around different documents. This is a nuanced query, in that the model will need to differentiate between work done for Ford Credit Organization and Ford Motor Company. 
 
 **Input Query:** <em>"What have I worked on at Ford Credit Organization so far? Do not conflate this with my work at Ford Motor Company."</em>
 
