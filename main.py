@@ -8,6 +8,7 @@ from langchain.vectorstores import Chroma
 from langchain.docstore.document import Document
 from langchain.chains.qa_with_sources import load_qa_with_sources_chain
 from langchain.llms import OpenAI
+import os
 
 
 def load_documents(parent_folder_path: str, progress_bar: bool = False):
@@ -39,7 +40,8 @@ def main():
     )
 
     # Perform a similarity search over the texts
-    query = "What have I worked on at Ford Credit Organization so far? Do not conflate this with my work at Ford Motor Company."
+    # query = "Given my projects and work experience, write an About section for my LinkedIn profile describing my technical proficiency as a Software Engineer. Write about 5 sentences."
+    query = "Summarize the topics I learned in my Machine Learning college class, and explain to me how I have applied that knowledge in projects elsewhere. Be concise."
     docs = docsearch.similarity_search(query)
 
     # Use the map_reduce chain to answer the question with sources
@@ -48,7 +50,15 @@ def main():
     )
     output = chain({"input_documents": docs, "question": query}, return_only_outputs=True)
 
-    print(output['output_text'])
+    print(output['output_text'].split("SOURCES:")[0])
+
+    # Decode sources
+    sources = output['output_text'].split("SOURCES:")[1].strip().split(",")
+    sources = [int(source.strip()) for source in sources]
+
+    print("Sources:")
+    for source_number in sources:
+        print(f'* {full_documents[source_number]["source"].split(os.sep)[-1]}')
 
 
 if __name__ == "__main__":
