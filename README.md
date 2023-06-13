@@ -3,7 +3,7 @@
 
 ## About:  
 
-In this project, I use the LangChain library along with the OpenAI gpt-3.5-turbo model in order to train a LLM on a custom dataset. A vector store is created using the aggregated texts in order to perform similarity search on the data given some query. A map_reduce chain is used to provide an answer to the query and provide sources. The chain also returns all intermediate steps used to find the answer. 
+In this project, I use the LangChain library along with the OpenAI gpt-3.5-turbo model in order to train a LLM on a custom dataset. A vector store is created using the aggregated texts in order to perform similarity search on the data given some query. A map_reduce chain is used to provide an answer to the query and provide sources. The choice of map_reduce as the chain is due to the large size of expected inputs. In addition to an answer for the query, the chain also returns all intermediate steps taken to arrive at the answer as well as document sources for the answer.
 
 --- 
 
