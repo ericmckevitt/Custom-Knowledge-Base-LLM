@@ -1,0 +1,6 @@
+tqdm
+pdf2image
+unstructured
+langchain
+openai
+chromadb
