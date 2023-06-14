@@ -40,8 +40,8 @@ def main():
     )
 
     # Perform a similarity search over the texts
-    # query = "Given my projects and work experience, write an About section for my LinkedIn profile describing my technical proficiency as a Software Engineer. Write about 5 sentences."
-    query = "Summarize the topics I learned in my Machine Learning college class, and explain to me how I have applied that knowledge in projects elsewhere. Be concise."
+    query = """Given my projects and work experience, write an About section for my LinkedIn profile describing my technical proficiency as a Software Engineer. Write about 5 sentences."""
+
     docs = docsearch.similarity_search(query)
 
     # Use the map_reduce chain to answer the question with sources

@@ -23,6 +23,11 @@ In this example, I ask the LLM to find out what I have worked on at Ford Credit 
 
 **Input Query:** <em>"What have I worked on at Ford Credit Organization so far? Do not conflate this with my work at Ford Motor Company."</em>
 
-**Output:** <em>I have worked on modernizing the Dealer Information System website using Angular for mobile responsiveness, adding new forms with validation and http request capabilities to the Dealer Information System, and modernizing PrimeNG tables by writing media queries to increase their mobile responsiveness. SOURCES: 34, 75, 73</em>
+**Output:** <em>"I have worked on modernizing the Dealer Information System website using Angular for mobile responsiveness, adding new forms with validation and http request capabilities to the Dealer Information System, and modernizing PrimeNG tables by writing media queries to increase their mobile responsiveness.    
 
-> **Note:** The sentences the model it came up with are entirely new sentences that appear nowhere in my corpus of notes in that exact language, but all of the information reported is correct and is aggregated from several sources. 
+Sources:
+* Extended Resume.md
+* Ford Credit Organization.md"
+</em>
+
+> **Note:** The sentences the model came up with are entirely new sentences that appear nowhere in my corpus of notes in that exact language, but all of the information reported is correct and is aggregated from several sources. 
