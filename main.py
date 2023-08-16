@@ -25,6 +25,9 @@ def main():
 
     documents = load_documents(parent_folder_path, progress_bar=True)
 
+    # Optional: Extend documents list to include pdfs
+    documents.extend(DirectoryLoader(parent_folder_path, glob="**/*.pdf", show_progress=True).load())
+
     # Split the documents into smaller chunks
     text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
     texts = text_splitter.split_documents(documents)
